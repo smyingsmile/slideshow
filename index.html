@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>slideshow</title>
+        <style media="screen">
+        <style>
+            .smy-hide {
+                display: none;
+            }
+            img {
+                /*transition 这个 css 指定了某个属性发生变化的时候自动使用动画效果和动画时间*/
+                transition: width 1s, height 1s;
+                width: 800px;
+                height: 450px;
+                border-radius: 19px;
+            }
+            /* 轮播图*/
+            .smy-slide {
+                width: 800px;
+                position: relative;
+                margin: 0 auto;
+            }
+            .smy-slide-image {
+                display: none;
+            }
+            .smy-active {
+                display: inline-block;
+            }
+            .smy-slide-button {
+                right: 0;
+                height: 50px;
+                width: 30px;
+                color: #fff;
+                background: black;
+                opacity: 0.3;
+                border: none;
+                outline: 0;
+                cursor: pointer;
+            }
+            .smy-slide-button.smy-left {
+                left: 0;
+            }
+            .smy-slide-button.smy-right {
+                right: 0;
+            }
+            .smy-vertical-center {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .smy-slide-indicators {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 10px;
+            }
+            .smy-slide-indi {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: gray;
+            }
+            .smy-white {
+                background: white;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 轮播图 -->
+        <div class="smy-3">
+            <div class="smy-slide" data-imgs="6" data-active="0">
+                <img id="id-smyimage-0" class="smy-slide-image smy-active" src="slideimages/1.jpg" alt="">
+                <img id="id-smyimage-1" class="smy-slide-image" src="slideimages/2.jpg" alt="">
+                <img id="id-smyimage-2" class="smy-slide-image" src="slideimages/3.jpg" alt="">
+                <img id="id-smyimage-3" class="smy-slide-image" src="slideimages/4.jpg" alt="">
+                <img id="id-smyimage-4" class="smy-slide-image" src="slideimages/5.jpg" alt="">
+                <img id="id-smyimage-5" class="smy-slide-image" src="slideimages/6.jpg" alt="">
+                <button class="smy-slide-button smy-left smy-vertical-center" data-offset="-1">&lt;</button>
+                <button class="smy-slide-button smy-right smy-vertical-center" data-offset="1">&gt;</button>
+                <div class="smy-slide-indicators">
+                    <div id="id-indi-0" class="smy-slide-indi smy-white" data-index="0"></div>
+                    <div id="id-indi-1" class="smy-slide-indi" data-index="1"></div>
+                    <div id="id-indi-2" class="smy-slide-indi" data-index="2"></div>
+                    <div id="id-indi-3" class="smy-slide-indi" data-index="3"></div>
+                    <div id="id-indi-4" class="smy-slide-indi" data-index="4"></div>
+                    <div id="id-indi-5" class="smy-slide-indi" data-index="5"></div>
+                </div>
+            </div>
+        </div>
+        <script src="utils.js"></script>
+        <script src="slideshow.js"></script>
+    </body>
+</html>
