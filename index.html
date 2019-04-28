@@ -24,8 +24,19 @@
             .smy-slide-image {
                 display: none;
             }
+            @keyframes fadeIn {
+                 from {
+                    opacity: 0;
+                  }
+
+                  to {
+                    opacity: 1;
+                  }
+            }
             .smy-active {
                 display: inline-block;
+                animation-duration: 2s;
+                animation-name: fadeIn;
             }
             .smy-slide-button {
                 right: 0;
